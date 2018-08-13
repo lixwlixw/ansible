@@ -58,4 +58,92 @@ Swap:            0B          0B          0B
 
 ```
 ### 2.3 将本地1.txt文件拷贝到远程主机devuser用户的家目录。
+```
+[devuser@node02 demo]$ ansible -i hosts all -m copy -a "src=1.txt dest=/home/devuser/"
+
+10.1.0.5 | SUCCESS => {
+    "changed": true, 
+    "checksum": "4e1243bd22c66e76c2ba9eddc1f91394e57f9f83", 
+    "dest": "/home/devuser/1.txt", 
+    "gid": 2047, 
+    "group": "devuser", 
+    "md5sum": "d8e8fca2dc0f896fd7cb4cb0031ba249", 
+    "mode": "0664", 
+    "owner": "devuser", 
+    "size": 5, 
+    "src": "/home/devuser/.ansible/tmp/ansible-tmp-1534154182.27-122234934217791/source", 
+    "state": "file", 
+    "uid": 2047
+}
+10.1.0.3 | SUCCESS => {
+    "changed": true, 
+    "checksum": "4e1243bd22c66e76c2ba9eddc1f91394e57f9f83", 
+    "dest": "/home/devuser/1.txt", 
+    "gid": 2047, 
+    "group": "devuser", 
+    "md5sum": "d8e8fca2dc0f896fd7cb4cb0031ba249", 
+    "mode": "0664", 
+    "owner": "devuser", 
+    "size": 5, 
+    "src": "/home/devuser/.ansible/tmp/ansible-tmp-1534154182.26-186234237051351/source", 
+    "state": "file", 
+    "uid": 2047
+}
+10.1.0.7 | SUCCESS => {
+    "changed": true, 
+    "checksum": "4e1243bd22c66e76c2ba9eddc1f91394e57f9f83", 
+    "dest": "/home/devuser/1.txt", 
+    "gid": 2047, 
+    "group": "devuser", 
+    "md5sum": "d8e8fca2dc0f896fd7cb4cb0031ba249", 
+    "mode": "0664", 
+    "owner": "devuser", 
+    "size": 5, 
+    "src": "/home/devuser/.ansible/tmp/ansible-tmp-1534154182.29-15280594574344/source", 
+    "state": "file", 
+    "uid": 2047
+}
+10.1.0.2 | SUCCESS => {
+    "changed": true, 
+    "checksum": "4e1243bd22c66e76c2ba9eddc1f91394e57f9f83", 
+    "dest": "/home/devuser/1.txt", 
+    "gid": 2047, 
+    "group": "devuser", 
+    "md5sum": "d8e8fca2dc0f896fd7cb4cb0031ba249", 
+    "mode": "0664", 
+    "owner": "devuser", 
+    "size": 5, 
+    "src": "/home/devuser/.ansible/tmp/ansible-tmp-1534154182.24-256472349789830/source", 
+    "state": "file", 
+    "uid": 2047
+}
+10.1.0.6 | SUCCESS => {
+    "changed": true, 
+    "checksum": "4e1243bd22c66e76c2ba9eddc1f91394e57f9f83", 
+    "dest": "/home/devuser/1.txt", 
+    "gid": 2047, 
+    "group": "devuser", 
+    "md5sum": "d8e8fca2dc0f896fd7cb4cb0031ba249", 
+    "mode": "0664", 
+    "owner": "devuser", 
+    "size": 5, 
+    "src": "/home/devuser/.ansible/tmp/ansible-tmp-1534154182.29-138161275507008/source", 
+    "state": "file", 
+    "uid": 2047
+}
+10.1.0.9 | SUCCESS => {
+    "changed": true, 
+    "checksum": "4e1243bd22c66e76c2ba9eddc1f91394e57f9f83", 
+    "dest": "/home/devuser/1.txt", 
+    "gid": 2047, 
+    "group": "devuser", 
+    "md5sum": "d8e8fca2dc0f896fd7cb4cb0031ba249", 
+    "mode": "0664", 
+    "owner": "devuser", 
+    "size": 5, 
+    "src": "/home/devuser/.ansible/tmp/ansible-tmp-1534154183.42-19923589709942/source", 
+    "state": "file", 
+    "uid": 2047
+}
+```
 
