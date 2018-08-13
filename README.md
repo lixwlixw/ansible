@@ -7,7 +7,7 @@ yum install ansible || apt-get install ansible
 ```
 ## 2. 基础用法
 ```
-ansible -i hosts(-i指定hosts文件路径)  all(hosts文件可以分组 all表示hosts文件所有主机)  -m shell(-m 指定模块)  -a "echo demo"(具体执行的命令)
+ansible -i hosts(-i指定hosts文件路径)  all(all表示hosts文件所有主机 可以分组执行) -m shell(-m 指定模块)  -a "echo demo"(具体执行的命令)
 ```
 
 ### 2.1 准备ansible hosts文件  
