@@ -23,8 +23,7 @@ ansible是通过ssh远程主机。认证方式 1.密码认证 2.密钥认证 本
 
 ### 2.2 查看hosts文件中所有机器内存使用情况。
 ```
-ansible -i hosts all -m shell -a "free -h"
-
+[devuser@node02 demo]$ ansible -i hosts all -m shell -a "free -h"
 10.1.0.7 | SUCCESS | rc=0 >>
               total        used        free      shared  buff/cache   available
 Mem:           7.6G        2.7G        1.6G        2.5M        3.4G        4.6G
