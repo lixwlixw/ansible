@@ -197,3 +197,26 @@ test
 
 10.1.0.9 | SUCCESS | rc=0 >>
 ```
+### 2.6 验证删除。
+```
+[devuser@node02 demo]$ ansible -i hosts  all -m shell -a "cat /home/devuser/1.txt"
+
+10.1.0.5 | FAILED | rc=1 >>
+cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
+
+10.1.0.3 | FAILED | rc=1 >>
+cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
+
+10.1.0.7 | FAILED | rc=1 >>
+cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
+
+10.1.0.6 | FAILED | rc=1 >>
+cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
+
+10.1.0.2 | FAILED | rc=1 >>
+cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
+
+10.1.0.9 | FAILED | rc=1 >>
+cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
+
+```
