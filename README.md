@@ -146,25 +146,54 @@ Swap:            0B          0B          0B
     "uid": 2047
 }
 ```
-### 2.4 查看2.3拷贝的1.txt文件。
+### 2.4 查看2.3中拷贝的1.txt文件。
 ```
-[devuser@node02 demo]$ ansible -i hosts  all -m shell -a "cat /home/devuser/1.txt"
-
-10.1.0.5 | SUCCESS | rc=0 >>
-test
+[devuser@node02 demo]$ ansible -i hosts  all -m shell -a "ls /home/devuser/ && cat /home/devuser/1.txt"
 
 10.1.0.7 | SUCCESS | rc=0 >>
+1.txt
 test
 
-10.1.0.3 | SUCCESS | rc=0 >>
+10.1.0.5 | SUCCESS | rc=0 >>
+1.txt
 test
 
 10.1.0.6 | SUCCESS | rc=0 >>
+1.txt
+test
+
+10.1.0.3 | SUCCESS | rc=0 >>
+1.txt
 test
 
 10.1.0.2 | SUCCESS | rc=0 >>
+1.txt
 test
 
 10.1.0.9 | SUCCESS | rc=0 >>
+1.txt
 test
+
+```
+### 2.5 删除2.3中拷贝的1.txt文件。
+```
+[devuser@node02 demo]$ ansible -i hosts  all -m shell -a "rm -f  /home/devuser/1.txt"
+
+
+10.1.0.5 | SUCCESS | rc=0 >>
+
+
+10.1.0.7 | SUCCESS | rc=0 >>
+
+
+10.1.0.3 | SUCCESS | rc=0 >>
+
+
+10.1.0.6 | SUCCESS | rc=0 >>
+
+
+10.1.0.2 | SUCCESS | rc=0 >>
+
+
+10.1.0.9 | SUCCESS | rc=0 >>
 ```
