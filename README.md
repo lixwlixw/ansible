@@ -14,12 +14,12 @@ ansible -i hosts(-i指定hosts文件路径)  all(all表示hosts文件所有主�
 ```
 [devuser@node02 demo]$ cat hosts
 
-10.1.0.2 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
-10.1.0.3 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
-10.1.0.5 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
-10.1.0.6 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
-10.1.0.7 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
-10.1.0.9 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
+10.1.0.2 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
+10.1.0.3 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
+10.1.0.5 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
+10.1.0.6 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
+10.1.0.7 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
+10.1.0.9 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
 ```
 第一列为需要远程主机IP。    
 第二列为远程使用的用户。        
@@ -229,13 +229,13 @@ cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
 [devuser@node02 demo]$ cat hosts 
 
 [group1]
-10.1.0.2 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
-10.1.0.3 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
-10.1.0.5 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
+10.1.0.2 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
+10.1.0.3 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
+10.1.0.5 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
 [group2]
-10.1.0.6 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
-10.1.0.7 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
-10.1.0.9 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
+10.1.0.6 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
+10.1.0.7 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
+10.1.0.9 ansible_ssh_user=devuser ansible_ssh_pass=xxxxx
 ```
 ### 2.8. 查看group1中主机内存使用情况。
 ```
