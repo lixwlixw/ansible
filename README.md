@@ -6,6 +6,7 @@ Ansible通过SSH协议实现远程节点和管理节点之间的通信。理论�
 yum install ansible || apt-get install ansible
 ```
 ## 2. 基础用法
+
 ### 2.1 准备ansible hosts文件  
 ```
 [devuser@node02 demo]$ cat hosts
