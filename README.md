@@ -220,3 +220,36 @@ cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
 cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
 
 ```
+### 2.7 分组执行
+```
+[devuser@node02 demo]$ cat hosts 
+
+[group1]
+10.1.0.2 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
+10.1.0.3 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
+10.1.0.5 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
+[group2]
+10.1.0.6 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
+10.1.0.7 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
+10.1.0.9 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
+```
+### 2.8 查看group1中主机内存使用情况。
+```
+[devuser@node02 demo]$ ansible -i hosts group1 -m shell -a "free -h"
+
+10.1.0.3 | SUCCESS | rc=0 >>
+              total        used        free      shared  buff/cache   available
+Mem:           7.6G        4.4G        166M        2.7M        3.0G        2.8G
+Swap:            0B          0B          0B
+
+10.1.0.5 | SUCCESS | rc=0 >>
+              total        used        free      shared  buff/cache   available
+Mem:           7.6G        2.5G        2.9G        2.4M        2.3G        4.8G
+Swap:            0B          0B          0B
+
+10.1.0.2 | SUCCESS | rc=0 >>
+              total        used        free      shared  buff/cache   available
+Mem:           7.6G        2.6G        3.1G        2.6M        1.9G        4.7G
+Swap:            0B          0B          0B
+
+```
