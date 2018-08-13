@@ -8,7 +8,8 @@ yum install ansible || apt-get install ansible
 ## 2. 基础用法
 ### 2.1 准备ansible hosts文件  
 ```
-cat hosts
+[devuser@node02 demo]$ cat hosts
+
 10.1.0.2 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
 10.1.0.3 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
 10.1.0.5 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
