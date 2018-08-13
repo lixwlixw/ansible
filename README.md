@@ -10,7 +10,7 @@ yum install ansible || apt-get install ansible
 ansible -i hosts(-i指定hosts文件路径)  all(all表示hosts文件所有主机 可以分组执行) -m shell(-m 指定模块)  -a "echo demo"(具体执行的命令)
 ```
 
-### 2.1 准备ansible hosts文件  
+### 2.1. 准备ansible hosts文件  
 ```
 [devuser@node02 demo]$ cat hosts
 
@@ -26,7 +26,7 @@ ansible -i hosts(-i指定hosts文件路径)  all(all表示hosts文件所有主�
 第三列为远程用户的密码。       
 ansible是通过ssh远程主机。认证方式 1.密码认证 2.密钥认证 本次演示使用密码认证。  
 
-### 2.2 查看hosts文件中所有机器内存使用情况。
+### 2.2. 查看hosts文件中所有机器内存使用情况。
 ```
 [devuser@node02 demo]$ ansible -i hosts all -m shell -a "free -h"
 
@@ -61,7 +61,7 @@ Mem:           7.6G        3.4G        141M        2.2M        4.1G        3.9G
 Swap:            0B          0B          0B
 
 ```
-### 2.3 将本地1.txt文件拷贝到远程主机devuser用户的家目录。
+### 2.3. 将本地1.txt文件拷贝到远程主机devuser用户的家目录。
 ```
 [devuser@node02 demo]$ ansible -i hosts all -m copy -a "src=1.txt dest=/home/devuser/"
 
@@ -150,7 +150,7 @@ Swap:            0B          0B          0B
     "uid": 2047
 }
 ```
-### 2.4 查看2.3中拷贝的1.txt文件。
+### 2.4. 查看2.3中拷贝的1.txt文件。
 ```
 [devuser@node02 demo]$ ansible -i hosts  all -m shell -a "ls /home/devuser/ && cat /home/devuser/1.txt"
 
@@ -179,7 +179,7 @@ test
 test
 
 ```
-### 2.5 删除2.3中拷贝的1.txt文件。
+### 2.5. 删除2.3中拷贝的1.txt文件。
 ```
 [devuser@node02 demo]$ ansible -i hosts  all -m shell -a "rm -f  /home/devuser/1.txt"
 
@@ -201,7 +201,7 @@ test
 
 10.1.0.9 | SUCCESS | rc=0 >>
 ```
-### 2.6 验证删除。
+### 2.6. 验证删除。
 ```
 [devuser@node02 demo]$ ansible -i hosts  all -m shell -a "cat /home/devuser/1.txt"
 
@@ -224,7 +224,7 @@ cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
 cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
 
 ```
-### 2.7 分组执行
+### 2.7. 分组执行
 ```
 [devuser@node02 demo]$ cat hosts 
 
@@ -237,7 +237,7 @@ cat: /home/devuser/1.txt: 没有那个文件或目录non-zero return code
 10.1.0.7 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
 10.1.0.9 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
 ```
-### 2.8 查看group1中主机内存使用情况。
+### 2.8. 查看group1中主机内存使用情况。
 ```
 [devuser@node02 demo]$ ansible -i hosts group1 -m shell -a "free -h"
 
@@ -257,5 +257,5 @@ Mem:           7.6G        2.6G        3.1G        2.6M        1.9G        4.7G
 Swap:            0B          0B          0B
 
 ```
-## 3 高级用法
+## 3. 高级用法
 请参考 https://docs.ansible.com/ansible/latest/user_guide/playbooks.html
