@@ -7,8 +7,13 @@ yum install ansible || apt-get install ansible
 ```
 ## 2. 基础用法
 ### 2.1 准备ansible hosts文件
-cat hosts
+第一列为需要远程主机IP。
+第二列为远程使用的用户。
+第三列为远程用户的密码。
+ps: ansible是通过ssh远程主机。两种认证方式 1.密码认证 2.密钥认证
+本次演示使用密码认证。
 ```
+cat hosts
 10.1.0.2 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
 10.1.0.3 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
 10.1.0.5 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
@@ -16,3 +21,4 @@ cat hosts
 10.1.0.7 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
 10.1.0.9 ansible_ssh_user=devuser ansible_ssh_pass=9aoji_D@v
 ```
+
