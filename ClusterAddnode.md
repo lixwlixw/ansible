@@ -1,4 +1,4 @@
-## 描述Kubernetes集群添加node节点
+## Kubernetes集群添加node节点
 1.配置hosts解析 
 ```
 sudo echo 10.1.0.36 kubernetes.default.svc >> /etc/hosts
