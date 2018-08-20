@@ -59,7 +59,7 @@ kubectl exec test ls / -n demo
 ```
 kubectl cordon node1
 ```
-* 驱逐node1节点上所有pod
+* 驱逐node1节点上所有pod(先执行停止调度操作)
 ```
 kubectl drain node --force
 ```
