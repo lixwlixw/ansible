@@ -61,7 +61,7 @@ kubectl cordon node1
 ```
 * 驱逐node1节点上所有pod(先执行停止调度操作)
 ```
-kubectl drain node --force
+kubectl drain node1 --force
 ```
 * 把node1节点从集群中删除(先执行上面两步操作)
 ```
