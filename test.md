@@ -8,7 +8,7 @@ kubectl create -f https://github.com/lixwlixw/monitroing/blob/master/kube-state-
 ## 2.修改prometheus配置文件(/usr/share/prometheus/prometheus.yml)。
 ```
 global:
-  scrape_interval: 15s         <!-- 每15秒pull一次数据。 -->
+  scrape_interval: 15s         #每15秒pull一次数据。
   evaluation_interval: 30s     #每30秒检测一次报警规则。
 ```
 ```
